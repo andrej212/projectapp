@@ -3,7 +3,7 @@ import {getAllUsers} from '../services/UserService.js'
 import UserCard from './UserCard.jsx'
 
 
-function UserList() {
+function UserList({ setSelectedUser }) {
 
     const [users, setUsers] = useState([]);
     
@@ -18,7 +18,7 @@ function UserList() {
     
   return (
     <div className='flex flex-wrap gap-5 justify-center'>
-       {users.map(user => <UserCard key={user.id} user ={user}></UserCard>)}
+       {users.map(user => <UserCard key={user.id} user ={user} setSelectedUser={setSelectedUser}></UserCard>)}
     </div>
   )
 }

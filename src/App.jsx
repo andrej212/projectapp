@@ -4,9 +4,10 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 import UserList from './components/UserList'
+import UserDetails from './components/UserDetails'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [selectedUser, setSelectedUser] = useState(null);
 
   return (
     <>
@@ -14,8 +15,10 @@ function App() {
       <h1 className="text-red-500">
         Hi
       </h1>
-      <UserList />
-     
+      <UserList setSelectedUser={setSelectedUser}/>
+      {selectedUser && (
+        <UserDetails user={selectedUser} />
+      )}
     </>
   )
 }
