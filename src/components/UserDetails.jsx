@@ -6,6 +6,8 @@ function UserDetails({user}) {
       <h1>Details about {user.name} with id {user.id}</h1>
       <p>{user.phone}</p>
       <p>{user.website}</p>
+      <p>{user.address.city}</p>
+      <p>{user.company.catchPhrase}</p>
     </div>
   )
 }
